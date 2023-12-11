@@ -1,0 +1,190 @@
+{
+  "version": 4,
+  "terraform_version": "1.6.5",
+  "serial": 82,
+  "lineage": "7ae6db82-9b2e-1fd3-afa4-4c6692fa2f39",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_eip",
+      "name": "eip",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address": null,
+            "allocation_id": "eipalloc-0073df9c81503e727",
+            "associate_with_private_ip": null,
+            "association_id": "eipassoc-02cf08d3e1a2c07c2",
+            "carrier_ip": "",
+            "customer_owned_ip": "",
+            "customer_owned_ipv4_pool": "",
+            "domain": "vpc",
+            "id": "eipalloc-0073df9c81503e727",
+            "instance": "i-0c1eef01b23838baa",
+            "network_border_group": "us-east-1",
+            "network_interface": "eni-0ea78afc1691a30ed",
+            "private_dns": "ip-172-31-89-73.ec2.internal",
+            "private_ip": "172.31.89.73",
+            "public_dns": "ec2-44-218-190-209.compute-1.amazonaws.com",
+            "public_ip": "44.218.190.209",
+            "public_ipv4_pool": "amazon",
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "vpc": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxODAwMDAwMDAwMDAsInJlYWQiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMDB9fQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "docker_container",
+      "name": "app",
+      "provider": "provider[\"registry.terraform.io/kreuzwerker/docker\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "attach": false,
+            "bridge": "",
+            "capabilities": [],
+            "cgroupns_mode": null,
+            "command": [
+              "/bin/sh",
+              "-c",
+              "bash -c \"bundle exec rackup\""
+            ],
+            "container_logs": null,
+            "container_read_refresh_timeout_milliseconds": 15000,
+            "cpu_set": "",
+            "cpu_shares": 0,
+            "destroy_grace_seconds": null,
+            "devices": [],
+            "dns": [],
+            "dns_opts": [],
+            "dns_search": [],
+            "domainname": "",
+            "entrypoint": [],
+            "env": [
+              "PORT=4000"
+            ],
+            "exit_code": null,
+            "gpus": null,
+            "group_add": [],
+            "healthcheck": [],
+            "host": [],
+            "hostname": "f95a8164d86c",
+            "id": "f95a8164d86ce3a02318fb9af10ab962e6bea1a16bd84857c4e55341b3f2b0c7",
+            "image": "sha256:757b06b7f133dd6394ddd457891662cdddceb1eb6f4d03f74914f0664ad8f9c9",
+            "init": false,
+            "ipc_mode": "private",
+            "labels": [],
+            "log_driver": "journald",
+            "log_opts": {},
+            "logs": false,
+            "max_retry_count": 0,
+            "memory": 0,
+            "memory_swap": 0,
+            "mounts": [],
+            "must_run": true,
+            "name": "app",
+            "network_data": [
+              {
+                "gateway": "172.17.0.1",
+                "global_ipv6_address": "",
+                "global_ipv6_prefix_length": 0,
+                "ip_address": "172.17.0.2",
+                "ip_prefix_length": 16,
+                "ipv6_gateway": "",
+                "mac_address": "02:42:ac:11:00:02",
+                "network_name": "bridge"
+              }
+            ],
+            "network_mode": "default",
+            "networks_advanced": [],
+            "pid_mode": "",
+            "ports": [
+              {
+                "external": 80,
+                "internal": 4000,
+                "ip": "0.0.0.0",
+                "protocol": "tcp"
+              }
+            ],
+            "privileged": false,
+            "publish_all_ports": false,
+            "read_only": false,
+            "remove_volumes": true,
+            "restart": "unless-stopped",
+            "rm": false,
+            "runtime": "runc",
+            "security_opts": [],
+            "shm_size": 64,
+            "start": true,
+            "stdin_open": false,
+            "stop_signal": "",
+            "stop_timeout": 0,
+            "storage_opts": {},
+            "sysctls": {},
+            "tmpfs": {},
+            "tty": false,
+            "ulimit": [
+              {
+                "hard": 1024,
+                "name": "nofile",
+                "soft": 1024
+              }
+            ],
+            "upload": [],
+            "user": "",
+            "userns_mode": "",
+            "volumes": [],
+            "wait": false,
+            "wait_timeout": 60,
+            "working_dir": "/app"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "aws_eip.eip",
+            "docker_image.app"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "docker_image",
+      "name": "app",
+      "provider": "provider[\"registry.terraform.io/kreuzwerker/docker\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "build": [],
+            "force_remove": null,
+            "id": "sha256:757b06b7f133dd6394ddd457891662cdddceb1eb6f4d03f74914f0664ad8f9c9rolandbakunts/ruby:latest",
+            "image_id": "sha256:757b06b7f133dd6394ddd457891662cdddceb1eb6f4d03f74914f0664ad8f9c9",
+            "keep_locally": null,
+            "name": "rolandbakunts/ruby:latest",
+            "platform": null,
+            "pull_triggers": null,
+            "repo_digest": "rolandbakunts/ruby@sha256:958cf25f7d09c85de83d8aaedb845d2b8e47eeec9698bfce1a927b1edbe9ba83",
+            "triggers": null
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_eip.eip"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

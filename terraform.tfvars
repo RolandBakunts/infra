@@ -1,0 +1,6 @@
+region            = "us-east-1"
+image             = "rolandbakunts/ruby:latest"
+instance_ami      = "ami-0bba7c37b9de21f04"
+instance_user     = "core"
+instance_key_file = "ssh_keys/id_rsa_instance_key.pub"
+env               = "staging"
