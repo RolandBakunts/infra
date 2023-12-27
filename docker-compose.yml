@@ -17,3 +17,11 @@ services:
       - .:/infra
       - ~/.ssh:/root/.ssh
     environment: *aws-vault-environment
+  remote:
+    build: ./docker/remote
+    platform: linux/amd64
+    entrypoint: ""
+    environment: *aws-vault-environment
+    volumes:
+      - ./docker/remote:/app:cached
+      - .aws:/root/.aws

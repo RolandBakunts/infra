@@ -1,3 +1,3 @@
 variable "region" {
-  description = "us-east-1"
+  description = "the AWS region in which resources are created"
 }
