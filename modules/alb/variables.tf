@@ -29,3 +29,7 @@ variable "health_check_path" {
   type        = string
   description = "Path used to check the health of the targets."
 }
+
+variable "certificate_arn" {
+  type        = string
+}

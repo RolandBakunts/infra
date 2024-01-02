@@ -53,6 +53,10 @@ variable "image" {
   type        = string
 }
 
+variable "domain" {
+  type        = string
+}
+
 variable "secrets" {
-  type = map(string)
+  type        = map(string)
 }

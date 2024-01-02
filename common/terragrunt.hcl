@@ -1,11 +1,13 @@
 locals {
   region  = "us-east-1"
   project = "terragrunt-infra-rlbk"
+  domain  = "learning-rolandwebsite.website"
 }
 
 inputs = {
   region  = local.region
   project = local.project
+  domain  = local.domain
 }
 
 remote_state {
